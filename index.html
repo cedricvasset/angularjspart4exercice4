@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" ng-app="fonction">
+<!--déclaration de la variable qui sera utilisée sur la page ng-app  fonction-->
+<head>
+  <meta charset="utf-8" />
+  <title>exercice 3 partie 4 angularjs</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="voiture.json">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body >
+  <div ng-controller="marqueCtrl">
+    <!--déclaration de la fonction qui sera utilisée dans le tableau-->
+    <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+      <thead>
+        <th>Marque</th>
+        <th>Couleur</th>
+      </thead>
+      <!--ng-repeat va chercher les données marque dans le tableau marques-->
+      <tr ng-repeat="marque in marques | filter: '!verte'">
+        <!--le !!! exclus la couleur verte-->
+        <td>
+          <!--on va chercher la marque dans les données et on l affiche-->
+            {{marque.marque}}
+        </td>
+        <td>
+          <!--on va chercher la couleur dans les données et on l affiche-->
+            {{marque.couleur}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
